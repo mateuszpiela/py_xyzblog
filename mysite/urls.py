@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.conf import settings
+from django.conf.urls import handler404
 from django.conf.urls.static import static
-from blog.views import Image, ImageDisplay
+from blog.views import Image, ImageDisplay, error_404_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +27,7 @@ urlpatterns = [
     path('image/', Image.as_view(), name='image'),
     path('image/<int:pk>/', ImageDisplay.as_view(), name='image_display'),
 ]
+handler404 = error_404_view
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
