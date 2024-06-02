@@ -8,6 +8,9 @@
     <h4> Data Opublikowania: {{ post.publish_date }} </h4>
 </div>
 <div>
+{% if post.image %}
+<img src="{{ post.image.url }}" alt="post image" class="img-thumbnail img-thumbnail-force"></br>
+{% endif %}
 {{ post.text|linebreaksbr }}
 </div>
 <br>

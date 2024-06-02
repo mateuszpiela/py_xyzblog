@@ -3,3 +3,8 @@
     background-color: darkgoldenrod;
     color: white;
 }
+
+.img-thumbnail-force {
+    max-width: 200px;
+    max-height: 200px;
+}
