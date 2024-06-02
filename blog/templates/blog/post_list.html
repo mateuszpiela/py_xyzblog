@@ -3,6 +3,16 @@
 {% block title %}Lista postów do przeczytania{% endblock %}
 
 {% block content %}
+<div>
 <h2> Witaj na stronie bloga XYZ </h2>
+<h4> Kliknij w poniższe wpisy aby przeczytać </h4>
+</div>
 
+{% for post in posts %}
+   <div>
+    <p> Opublikowano: {{ post.publish_date }}
+    <h2><a href="/post/{{ post.id }}">{{ post.title }}</a></h2>
+    <em>{{ post.text|linebreaksbr }}</em>
+   </div>
+{% endfor %}
 {% endblock %}
