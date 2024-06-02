@@ -1,0 +1,15 @@
+{% extends 'blog\base.html' %}
+
+{% block title %}Wpis: {{ post.title }}{% endblock %}
+
+{% block content %}
+<div class="text-center welcome-header">
+    <h2> Tytuł wpisu: {{ post.title }} </h2>
+    <h4> Data Opublikowania: {{ post.publish_date }} </h4>
+</div>
+<div>
+{{ post.text|linebreaksbr }}
+</div>
+<br>
+<a class="btn btn-warning" href="{% url 'post_list' %}">Wróc z powrotem na listę wpisów</a>
+{% endblock %}
