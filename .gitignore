@@ -1,6 +1,3 @@
 #Ignore directories
 venv
 __pycache__
-
-#Ignore local config file
-mysite/settings.py
